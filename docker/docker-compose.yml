@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_bcd
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: bcd
+      MYSQL_USER: aluno
+      MYSQL_PASSWORD: aluno
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
